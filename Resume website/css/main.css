@@ -1,0 +1,326 @@
+:root{
+    --text-color: purple;
+    
+}
+body {
+	margin: 30px;
+	padding: 10px;	
+}
+
+
+/*
+The float property used below specifies whether the element will float to the right or left of the element's
+ parent container, allowing text to flow around the element. 
+
+Information about float taken from www.zybooks.com
+URL: https://learn.zybooks.com/zybook/DALCSCI1170SampangiFall2020/chapter/3/section/9?content_resource_id=41951584 
+date accessed : 8th October 2020
+*/
+#links{
+    float:right;
+    width:70%;
+    position:relative;
+    top:20px;
+}
+
+#exp-summary{
+    float:right;
+    width:70%;
+    position:relative;
+    top:30px;
+}
+/*
+ Information and concept of the position property learned from www.w3schools.com
+URL: https://www.w3schools.com/css/css_positioning.asp
+date accessed: October 8th 2020
+*/
+
+#email-icon , #phone-icon{
+    width: 20px;
+    height: 20px;
+    float:left;    
+}
+
+.website-icon{
+   width: 20px;
+   height: 20px;
+   float:left;    
+}
+
+ul#horizontal-links li {
+    display: inline;
+    float: left;
+    position:relative;
+    right:45px;
+    padding:5px;
+}
+/*
+ Information and concept of the position property learned from www.w3schools.com
+URL: https://www.w3schools.com/css/css_positioning.asp
+date accessed: October 8th 2020
+*/
+
+/*
+display: inline will make a list have properties like an inline level element
+list(unordered and ordered) are orignally block level elements
+*/
+
+#personal-details , #skills{
+    width:30%;
+    float:left;
+}
+
+#experience{
+    width:70%;
+    float:right;
+    position:relative;
+    top:30px;
+}
+
+#edu{
+    width: 30%;
+}
+
+h1{
+    float:right;
+    position: relative; 
+    left:-100px;
+    border-style:dotted;
+    border-color:purple;
+    
+}
+h2{
+    border-style: groove;
+    display:inline;
+    background-color:rgb(214, 50, 91);
+}
+
+h3{
+    border-style: dashed;
+    border-color: yellowgreen;
+    width: 40%;
+}
+
+h3:hover{
+    background-color: yellowgreen;
+}
+
+h2:hover{
+    background-color: rgb(214, 50, 91);
+}
+
+
+h1:hover{
+    background-color: var(--text-color);
+
+}
+
+
+
+/*by using the hover property, the background color will change when mouse is hovered over a text */
+
+
+
+#placeholderimg {
+    margin: 20px;
+    border-style: dashed;
+    
+}
+/*
+Placeholder image used from placeholder.com
+URL: https://via.placeholder.com/150
+Date accessed - 18th September
+*/
+
+a:visited{
+    color:rgb(23, 231, 103);
+}
+ /*
+ changes the color of the link after it has been visited once
+*/
+
+
+
+p{
+    color: var(--text-color);
+    font-family: 'sans-serif';  
+    font-size: medium;
+}
+
+
+
+/*
+A CSS variable is defined with two dashes preceding the variable name.
+A CSS variable is accessed with the var() function
+
+Information about variables taken from www.zybooks.com
+URL: https://learn.zybooks.com/zybook/DALCSCI1170SampangiFall2020/chapter/3/section/9?content_resource_id=41951584
+date accessed : 8th October 2020 
+*/
+
+
+
+/*
+if dark mode was enabled, the background color of the webpage should be a darker shade.
+it can be set to black and we can use the property background-color:black;
+
+The text on the page should have a color which will be easily visible on a dark color
+For that, I will set the color of all headings to Bright yellow and the paragraphs should have white color
+that can be done by font-color:white; 
+
+It will also be a good idea to have other colors like blue for borders around heading or images to highlight them.
+I will also use colors like red for background of some important text. This will be useful when I am trying to highlight some important part of my resume,
+
+
+*/
+/*learned the concept of media queries from concept videos of week7*/
+/*media queries for tablet view*/
+
+
+@media screen and (max-width: 1200px) {
+    .Resume{
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: auto;
+        gap:20px;
+      
+       
+        
+    }
+    #links{
+        grid-column: 1 / 2 ;
+    }
+    
+    #personal-details{
+        grid-column: 2/3;
+        grid-row: 1/2 ;
+
+    }
+    
+    
+    #role2{
+        grid-column: 3/4 ;
+        grid-row: 3/4 ;
+    } 
+    #role1{
+        grid-column: 2/3 ;
+        grid-row: 3/4 ;
+    }
+
+   
+     h1{
+        position: relative;
+        left: 70px;
+    } 
+
+    #edu{
+        grid-column: 2/4 ;
+        grid-row: 2/3 ;
+        position: relative;
+        top: -px;
+        
+
+    }
+    #skills{
+        grid-column: 3/4 ;
+        grid-row: 2/3 ;
+        position: relative;
+        top: 180px;
+    
+
+    }
+    #btn-dark-light-mode{
+        width: 200px;
+        height: 50px;
+        grid-column: 3/4 ;
+        grid-row: 2/3 ;
+        position: relative;
+        top: 20px;
+    }
+
+    }
+
+    /*media queries for mobile view*/
+
+
+@media screen and (max-width: 840px) {
+    .Resume{
+        display: grid; 
+        grid-template-columns: 50% 50% ;
+        /*used css grids to adjust different sections*/
+        gap:20px;      
+    }
+     #personal-details{
+        grid-column: 1 / 2 ;
+    }
+    
+    #links{
+        grid-column: 2/3;
+        grid-row: 1/2 ;
+
+    }
+     #experience{
+        grid-column: 1/2;
+        grid-row: 2/3 ;
+        position: relative;
+        top: 420px;
+
+    } 
+
+    #exp-summary{
+        grid-column: 1/2 ;
+        grid-row: 2/3 ;
+
+    }
+    
+    
+
+    #skills{
+        grid-column: 2/3 ;
+        grid-row: 1/2;
+        position: relative;
+        top: 175px;
+       
+    }
+   
+
+    #btn-dark-light-mode{
+        width: 200px;
+        height: 50px;
+        grid-column: 1/2 ;
+        grid-row: 2/3 ;
+        position: relative;
+        top: 350px;
+    }
+
+    #edu{
+        grid-column: 2/3 ;
+        grid-row: 2/3 ;
+        padding: 0px;
+        margin: auto;
+        display:inline;
+
+    }
+    #skills{
+        padding:0px;
+        margin:0px;
+        
+    }
+
+    
+
+}
+/*class to implement dark mode*/
+/*Concept learned from w3schools.com
+URL: https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+Date accessed: 2 November 2020*/
+.dark-light  { 
+
+    background-color: black; 
+    color: aliceblue;
+
+}
+#check-current-item{
+    background-color: steelblue;
+    border-radius: 25px;
+}
